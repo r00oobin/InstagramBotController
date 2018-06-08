@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="537b832c84e24c3c802d8690aa6d963c" Name="Diagram1">
+        <EntityTypeShape EntityType="InstagramBotControllerModel.Account" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstagramBotControllerModel.Follower" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstagramBotControllerModel.Image" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstagramBotControllerModel.ImageAccount" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstagramBotControllerModel.Person" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InstagramBotControllerModel.sysdiagram" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="InstagramBotControllerModel.FK_Account_Image1" ManuallyRouted="false" />
+        <AssociationConnector Association="InstagramBotControllerModel.FK_Account_Person1" ManuallyRouted="false" />
+        <AssociationConnector Association="InstagramBotControllerModel.FK_Followers_Account2" ManuallyRouted="false" />
+        <AssociationConnector Association="InstagramBotControllerModel.FK_Followers_Account3" ManuallyRouted="false" />
+        <AssociationConnector Association="InstagramBotControllerModel.FK_ImageAccount_Account1" ManuallyRouted="false" />
+        <AssociationConnector Association="InstagramBotControllerModel.FK_ImageAccount_Image1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

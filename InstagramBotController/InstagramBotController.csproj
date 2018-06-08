@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BF93734-8AA5-4E38-B4B5-47191BDD8855}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>InstagramBotController</RootNamespace>
+    <AssemblyName>InstagramBotController</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.10.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.10.7\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.10.7\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>InstagramBot.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Follower.cs">
+      <DependentUpon>InstagramBot.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>InstagramBot.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImageAccount.cs">
+      <DependentUpon>InstagramBot.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InstagramBot.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InstagramBot.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InstagramBot.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InstagramBot.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InstagramBot.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InstagramBot.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="InstagramBotController.cs" />
+    <Compile Include="Objects.cs" />
+    <Compile Include="Person.cs">
+      <DependentUpon>InstagramBot.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>InstagramBot.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="InstagramBot.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>InstagramBot.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="InstagramBot.edmx.diagram">
+      <DependentUpon>InstagramBot.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resources\InstagramAPI\.gitignore" />
+    <None Include="Resources\InstagramAPI\.git\config" />
+    <None Include="Resources\InstagramAPI\.git\description" />
+    <None Include="Resources\InstagramAPI\.git\HEAD" />
+    <None Include="Resources\InstagramAPI\.git\hooks\applypatch-msg.sample" />
+    <None Include="Resources\InstagramAPI\.git\hooks\commit-msg.sample" />
+    <None Include="Resources\InstagramAPI\.git\hooks\post-update.sample" />
+    <None Include="Resources\InstagramAPI\.git\hooks\pre-applypatch.sample" />
+    <None Include="Resources\InstagramAPI\.git\hooks\pre-commit.sample" />
+    <None Include="Resources\InstagramAPI\.git\hooks\pre-push.sample" />
+    <None Include="Resources\InstagramAPI\.git\hooks\pre-rebase.sample" />
+    <None Include="Resources\InstagramAPI\.git\hooks\pre-receive.sample" />
+    <None Include="Resources\InstagramAPI\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="Resources\InstagramAPI\.git\hooks\update.sample" />
+    <None Include="Resources\InstagramAPI\.git\index" />
+    <None Include="Resources\InstagramAPI\.git\info\exclude" />
+    <None Include="Resources\InstagramAPI\.git\logs\HEAD" />
+    <None Include="Resources\InstagramAPI\.git\logs\refs\heads\master" />
+    <None Include="Resources\InstagramAPI\.git\logs\refs\remotes\origin\HEAD" />
+    <None Include="Resources\InstagramAPI\.git\objects\pack\pack-4e1fa695f7d7512f1b1df9f11df9eff16b4f6998.idx" />
+    <None Include="Resources\InstagramAPI\.git\objects\pack\pack-4e1fa695f7d7512f1b1df9f11df9eff16b4f6998.pack" />
+    <None Include="Resources\InstagramAPI\.git\packed-refs" />
+    <None Include="Resources\InstagramAPI\.git\refs\heads\master" />
+    <None Include="Resources\InstagramAPI\.git\refs\remotes\origin\HEAD" />
+    <None Include="Resources\InstagramAPI\InstagramAPI\__pycache__\InstagramAPI.cpython-36.pyc" />
+    <None Include="Resources\InstagramAPI\InstagramAPI\__pycache__\__init__.cpython-36.pyc" />
+    <None Include="Resources\InstagramAPI\LICENSE" />
+    <None Include="Resources\InstagramAPI\README.md" />
+    <None Include="Resources\InstagramAPI\response_example.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InstagramBot.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InstagramBot.edmx</DependentUpon>
+      <LastGenOutput>InstagramBot.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="InstagramBot.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InstagramBot.edmx</DependentUpon>
+      <LastGenOutput>InstagramBot.cs</LastGenOutput>
+    </Content>
+    <Content Include="Resources\InstagramAPI\examples\delete_media.py" />
+    <Content Include="Resources\InstagramAPI\examples\direct_share.py" />
+    <Content Include="Resources\InstagramAPI\examples\evaluation\evaluate_user_followers.py" />
+    <Content Include="Resources\InstagramAPI\examples\evaluation\evaluation_log.py" />
+    <Content Include="Resources\InstagramAPI\examples\evaluation\__init__.py" />
+    <Content Include="Resources\InstagramAPI\examples\Example-BulkUpload.py" />
+    <Content Include="Resources\InstagramAPI\examples\get_all_comments.py" />
+    <Content Include="Resources\InstagramAPI\examples\live_broadcast.py" />
+    <Content Include="Resources\InstagramAPI\examples\test.py" />
+    <Content Include="Resources\InstagramAPI\examples\thread_download.py" />
+    <Content Include="Resources\InstagramAPI\examples\upload_album.py" />
+    <Content Include="Resources\InstagramAPI\examples\upload_photo.py" />
+    <Content Include="Resources\InstagramAPI\examples\upload_video.py" />
+    <Content Include="Resources\InstagramAPI\examples\user_followers.py" />
+    <Content Include="Resources\InstagramAPI\examples\user_followings.py" />
+    <Content Include="Resources\InstagramAPI\examples\__init__.py" />
+    <Content Include="Resources\InstagramAPI\Execute\searchUsername.py" />
+    <Content Include="Resources\InstagramAPI\InstagramAPI\exceptions.py" />
+    <Content Include="Resources\InstagramAPI\InstagramAPI\ImageUtils.py" />
+    <Content Include="Resources\InstagramAPI\InstagramAPI\InstagramAPI.py" />
+    <Content Include="Resources\InstagramAPI\InstagramAPI\__init__.py" />
+    <Content Include="Resources\InstagramAPI\requirements.txt" />
+    <Content Include="Resources\InstagramAPI\setup.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\InstagramAPI\.git\objects\info\" />
+    <Folder Include="Resources\InstagramAPI\.git\refs\tags\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InstagramBotControllerModelStoreContainer" CdmEntityContainer="InstagramBotControllerEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="InstagramBotControllerModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="person" ColumnName="person" />
+          <ScalarProperty Name="enable" ColumnName="enable" />
+          <ScalarProperty Name="ready" ColumnName="ready" />
+          <ScalarProperty Name="profileImage" ColumnName="profileImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Followers">
+      <EntityTypeMapping TypeName="InstagramBotControllerModel.Follower">
+        <MappingFragment StoreEntitySet="Followers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="follower1" ColumnName="follower" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="InstagramBotControllerModel.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImageAccounts">
+      <EntityTypeMapping TypeName="InstagramBotControllerModel.ImageAccount">
+        <MappingFragment StoreEntitySet="ImageAccount">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="account" ColumnName="account" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="InstagramBotControllerModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="InstagramBotControllerModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

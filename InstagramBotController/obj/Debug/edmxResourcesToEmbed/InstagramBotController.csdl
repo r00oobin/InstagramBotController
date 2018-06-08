@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InstagramBotControllerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="person" Type="Int32" Nullable="false" />
+    <Property Name="enable" Type="Boolean" Nullable="false" />
+    <Property Name="ready" Type="Boolean" Nullable="false" />
+    <Property Name="profileImage" Type="Int32" />
+    <NavigationProperty Name="Image" Relationship="Self.FK_Account_Image" FromRole="Account" ToRole="Image" />
+    <NavigationProperty Name="Person1" Relationship="Self.FK_Account_Person" FromRole="Account" ToRole="Person" />
+    <NavigationProperty Name="Followers" Relationship="Self.FK_Followers_Account" FromRole="Account" ToRole="Followers" />
+    <NavigationProperty Name="Followers1" Relationship="Self.FK_Followers_Account1" FromRole="Account" ToRole="Followers" />
+    <NavigationProperty Name="ImageAccount" Relationship="Self.FK_ImageAccount_Account" FromRole="Account" ToRole="ImageAccount" />
+  </EntityType>
+  <EntityType Name="Followers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="account" Type="Int32" Nullable="false" />
+    <Property Name="follower" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account1" Relationship="Self.FK_Followers_Account" FromRole="Followers" ToRole="Account" />
+    <NavigationProperty Name="Account2" Relationship="Self.FK_Followers_Account1" FromRole="Followers" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_Account_Image" FromRole="Image" ToRole="Account" />
+    <NavigationProperty Name="ImageAccount" Relationship="Self.FK_ImageAccount_Image" FromRole="Image" ToRole="ImageAccount" />
+  </EntityType>
+  <EntityType Name="ImageAccount">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="account" Type="Int32" Nullable="false" />
+    <Property Name="image" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Account1" Relationship="Self.FK_ImageAccount_Account" FromRole="ImageAccount" ToRole="Account" />
+    <NavigationProperty Name="Image1" Relationship="Self.FK_ImageAccount_Image" FromRole="ImageAccount" ToRole="Image" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Account" Relationship="Self.FK_Account_Person" FromRole="Person" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Account_Image">
+    <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="profileImage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Account_Person">
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="person" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Followers_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Followers" Type="Self.Followers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Followers">
+        <PropertyRef Name="account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Followers_Account1">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Followers" Type="Self.Followers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Followers">
+        <PropertyRef Name="follower" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImageAccount_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="ImageAccount" Type="Self.ImageAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ImageAccount">
+        <PropertyRef Name="account" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImageAccount_Image">
+    <End Role="Image" Type="Self.Image" Multiplicity="1" />
+    <End Role="ImageAccount" Type="Self.ImageAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ImageAccount">
+        <PropertyRef Name="image" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InstagramBotControllerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Account" EntityType="Self.Account" />
+    <EntitySet Name="Followers" EntityType="Self.Followers" />
+    <EntitySet Name="Image" EntityType="Self.Image" />
+    <EntitySet Name="ImageAccount" EntityType="Self.ImageAccount" />
+    <EntitySet Name="Person" EntityType="Self.Person" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Account_Image" Association="Self.FK_Account_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Account_Person" Association="Self.FK_Account_Person">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Followers_Account" Association="Self.FK_Followers_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Followers" EntitySet="Followers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Followers_Account1" Association="Self.FK_Followers_Account1">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Followers" EntitySet="Followers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImageAccount_Account" Association="Self.FK_ImageAccount_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="ImageAccount" EntitySet="ImageAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImageAccount_Image" Association="Self.FK_ImageAccount_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="ImageAccount" EntitySet="ImageAccount" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

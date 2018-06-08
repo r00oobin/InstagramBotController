@@ -1,0 +1,17 @@
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\InstagramBotController.exe.config
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\InstagramBotController.exe
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\InstagramBotController.pdb
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\EntityFramework.dll
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\EntityFramework.xml
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\obj\Debug\InstagramBotController.csprojAssemblyReference.cache
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\obj\Debug\InstagramBotController.csproj.CoreCompileInputs.cache
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\obj\Debug\InstagramBotController.csproj.CopyComplete
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\obj\Debug\InstagramBotController.exe
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\obj\Debug\InstagramBotController.pdb
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\MySql.Data.dll
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\System.Data.dll
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\MySql.Data.xml
+C:\Users\rfur\source\repos\scratch\InstagramBotController\InstagramBotController\bin\Debug\MySql.Data.Entity.EF6.xml
